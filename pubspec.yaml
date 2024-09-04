@@ -1,0 +1,48 @@
+name: test_app
+description: "A new Flutter project."
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # Screen Util Library
+  flutter_screenutil: ^5.9.3
+
+  # State Management Library
+  flutter_bloc: ^8.1.6
+
+  # Local Storage Library
+  shared_preferences: ^2.3.2
+
+  # UI helper Libraries
+  flutter_svg: ^2.0.10+1
+  shimmer: ^3.0.0
+  cached_network_image: ^3.4.1
+
+  # Other Libraries
+  equatable: ^2.0.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^4.0.0
+
+flutter:
+
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/
+    - assets/icons/
+    - assets/images/
