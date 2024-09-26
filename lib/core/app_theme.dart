@@ -5,8 +5,8 @@ class AppTheme {
   AppTheme._();
 
   /// Default Colors
-  static const Color defaultBackgroundColor = Color(0xffFFFFFF);
-  static const Color defaultContainerColor = Color(0xffFBFBFD);
+  static const Color defaultBackgroundColor = Color(0xffF6F8FA);
+  static const Color defaultContainerColor = Color(0xffFFFFFF);
   static const Color defaultPrimary = blue;
   static Color defaultSecondary = Colors.blueAccent;
   static const Color defaultError = Colors.red;
@@ -15,22 +15,25 @@ class AppTheme {
   static const Color darkGrey = Color(0xff333333);
   static const Color lightGrey = Color(0xffD9D9D9);
   static Color grey700 = const Color(0xff808080);
-  static const Color hintTextColor = Color(0xff616161);
+  static const Color hintTextColor = Color(0xff919DA9);
+  static const Color secondaryBgColor = Color(0xffE5E8EB);
   static const Color black = Color(0xff000000);
   static const Color grey200 = Color(0xffEBF0F4);
-  static const Color primaryTextColor = Color(0xff000000);
-  static const Color secondaryTextColor = Color(0xffFBFBFD);
+  static const Color primaryTextColor = Color(0xff293859);
+  static const Color secondaryTextColor = Color(0xffF6F8FA);
+  static const Color primaryIconColor = Color(0xff293859);
+  static const Color secondaryIconColor = Color(0xff919DA9);
   static const Color black700 = Color(0xff1E1E1E);
   static const Color bottomNavColor = Color(0xffEFF0F6);
   static const Color iconHighlightColor = Color(0xffF2F6F9);
   static const Color textFieldBorderColor = Color(0xffF2F6F9);
-  static const Color primaryBorderColor = Color(0xffE0DCDC);
+  static const Color primaryBorderColor = Color(0xff293859);
   static const Color textFieldColor = Color(0xff989898);
   static const Color dialogBgColor = Color(0xffF2F2F2);
   static const Color secondaryBorderColor = Color(0xff000000);
   static const Color white = Colors.white;
-  static const Color red = Colors.red;
-  static const Color blue = Color(0xff00B9E1);
+  static const Color red = Color(0xffFF8383);
+  static const Color blue = Color(0xff1169FF);
   static Color highlightColor = blue.withOpacity(0.1);
   static Color disableColor = blue.withOpacity(0.5);
   static const Color cyan = Color(0xff2AD5D8);
@@ -45,7 +48,7 @@ class AppTheme {
   static const Color lightYellow = Color(0xffFABE3C);
   static const Color yellowOrange = Color(0xffF9B023);
 
-  static Color primaryShadowColor = const Color(0xff000000).withOpacity(0.1);
+  static Color primaryShadowColor = const Color(0xff000000).withOpacity(0.05);
   static Color secondaryShadowColor = const Color(0xff000000).withOpacity(0.25);
   static Color lightShadowColor = const Color(0xff000000).withOpacity(0.15);
   static Color black300 = const Color(0xff000000).withOpacity(0.31);
@@ -53,9 +56,8 @@ class AppTheme {
   static Color secondaryContainerColor = const Color(0xffE0E0E0);
   static Color lightBorderColor = grey700.withOpacity(0.48);
   static Color iconColor = const Color(0xff1E1E1E).withOpacity(0.5);
-  static Color primaryIconColor = black;
-  static Color dividerColor = const Color(0xffE8E5E5).withOpacity(0.8824);
-  static Color lightDividerColor = const Color(0xffE0DCDC);
+  static Color dividerColor = const Color(0xff919DA9);
+  static Color lightDividerColor = const Color(0xffE2E8F0);
   static Color secondaryDividerColor = const Color(0xffC6C6C8);
   static Color pointBgColor = const Color(0xffEDEDED);
 
@@ -147,8 +149,8 @@ class AppTheme {
       secondaryContainer: defaultContainerColor,
       error: defaultError,
       onError: defaultError,
-      surface: defaultBackgroundColor,
-      onSurface: defaultBackgroundColor,
+      surface: defaultContainerColor,
+      onSurface: defaultContainerColor,
       brightness: Brightness.dark,
     );
   }

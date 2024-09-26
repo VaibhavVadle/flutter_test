@@ -3,9 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:test_app/core/app_theme.dart';
 import 'package:test_app/core/constants/constants.dart';
-import 'package:test_app/screens/home_screen/home_screen.dart';
-import 'package:test_app/screens/order_screen/order_screen.dart';
-import 'package:test_app/screens/profile_screen/profile_screen.dart';
+import 'package:test_app/screens/my_account_screen/my_account_screen.dart';
+import 'package:test_app/widgets/app_navigation_bar.dart';
 
 class DashBoardScreen extends StatefulWidget {
   const DashBoardScreen({super.key});
@@ -15,7 +14,7 @@ class DashBoardScreen extends StatefulWidget {
 }
 
 class _DashBoardScreenState extends State<DashBoardScreen> {
-  int currentSelectedIndex = 0;
+  int currentSelectedIndex = 1;
 
   void updateCurrentIndex(int index) {
     setState(() {
@@ -24,9 +23,10 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
   }
 
   final pages = [
-    const HomeScreen(),
-    const OrderScreen(),
-    const ProfileScreen(),
+    Container(),
+    const MyAccountScreen(),
+    Container(),
+    Container(),
   ];
 
   @override
@@ -36,28 +36,29 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
         index: currentSelectedIndex,
         children: pages,
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: AppTheme.highlightColor,
-        onTap: updateCurrentIndex,
+      bottomNavigationBar: AppBottomNavigationBar(
         currentIndex: currentSelectedIndex,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        type: BottomNavigationBarType.fixed,
+        onTap: (value) {
+          setState(() {
+            currentSelectedIndex = value;
+          });
+        },
         items: [
-          _buildNavItem(
+          AppNavigationBarItem(
             icon: AppAsset.home,
-            activeIcon: AppAsset.homeFill,
-            label: "Home",
+            title: AppString.home,
           ),
-          _buildNavItem(
-            icon: AppAsset.cart,
-            activeIcon: AppAsset.cartFill,
-            label: "Order",
+          AppNavigationBarItem(
+            icon: AppAsset.accounts,
+            title: AppString.myAccount,
           ),
-          _buildNavItem(
+          AppNavigationBarItem(
+            icon: AppAsset.history,
+            title: AppString.history,
+          ),
+          AppNavigationBarItem(
             icon: AppAsset.profile,
-            activeIcon: AppAsset.profileFill,
-            label: "Profile",
+            title: AppString.profile,
           ),
         ],
       ),
@@ -67,24 +68,23 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
   BottomNavigationBarItem _buildNavItem({
     required String label,
     required String icon,
-    required String activeIcon,
   }) {
     return BottomNavigationBarItem(
       icon: SvgPicture.asset(
         icon,
-        height: 32.w,
-        width: 32.w,
-        colorFilter: ColorFilter.mode(
-          AppTheme.grey700,
+        height: 24.w,
+        width: 24.w,
+        colorFilter: const ColorFilter.mode(
+          AppTheme.secondaryIconColor,
           BlendMode.srcIn,
         ),
       ),
       activeIcon: SvgPicture.asset(
-        activeIcon,
-        height: 32.w,
-        width: 32.w,
+        icon,
+        height: 24.w,
+        width: 24.w,
         colorFilter: const ColorFilter.mode(
-          AppTheme.darkTeal,
+          AppTheme.primaryIconColor,
           BlendMode.srcIn,
         ),
       ),

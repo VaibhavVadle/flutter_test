@@ -27,6 +27,7 @@ dependencies:
   flutter_svg: ^2.0.10+1
   shimmer: ^3.0.0
   cached_network_image: ^3.4.1
+  carousel_slider: ^5.0.0
 
   # Other Libraries
   equatable: ^2.0.5
@@ -45,4 +46,5 @@ flutter:
   assets:
     - assets/
     - assets/icons/
+    - assets/icons/options/
     - assets/images/
