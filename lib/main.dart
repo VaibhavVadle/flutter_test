@@ -16,7 +16,6 @@ Future<void> main() async {
     systemNavigationBarIconBrightness:
         Platform.isAndroid ? Brightness.dark : Brightness.light,
   ));
-
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
